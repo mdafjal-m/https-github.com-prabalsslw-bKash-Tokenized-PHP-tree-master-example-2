@@ -4,7 +4,7 @@
 	use Bkash\Library\Tokenized;
 
 
-	$execute_payment = new Tokenized();
+	$execute_payment = new Tokenized("W");
 
 	$status = $_GET['status'];
 	$payment_id = $_GET['paymentID'];
@@ -12,7 +12,7 @@
 	if($status == 'success' && !empty($payment_id))
 	{
 		$response = $execute_payment->executePayment($payment_id);
-		$execute_response = json_decode($response, true);
+		$execute_response = $response;
 
 		if(!empty($execute_response['paymentID']) && !empty($execute_response['trxID']) && !empty($execute_response['transactionStatus']) && $execute_response['transactionStatus'] == "Completed")
 		{

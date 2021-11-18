@@ -9,6 +9,8 @@
 		"refreshTokenUrl" => "/tokenized/checkout/token/refresh",
 		"createAgreementUrl" => "/tokenized/checkout/create",
 		"executeAgreementUrl" => "/tokenized/checkout/execute",
+		"queryAgreementUrl" => "/tokenized/checkout/agreement/status",
+		"cancelAgreementUrl" => "/tokenized/checkout/agreement/cancel",
 		"createPaymentUrl" => "/tokenized/checkout/create",
 		"executePaymentUrl" => "/tokenized/checkout/execute",
 		"capturePaymentUrl" => "/tokenized/checkout/payment/confirm/capture",

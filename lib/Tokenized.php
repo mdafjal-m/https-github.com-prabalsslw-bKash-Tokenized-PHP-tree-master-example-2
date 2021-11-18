@@ -65,6 +65,18 @@
 
 					file_put_contents("../config/token.json", $json_token);
 
+					if($this->config['is_sandbox']) {
+						$logData = [
+							"API Title" => "Grant Token API",
+							"API URL" => stripslashes(($this->getApiurl())),
+							"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+							"Header" => $header,
+							"Body" => $this->secretdata,
+							"API Response" => json_decode($response, true)
+						];
+			        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+			        }
+
 					return $response;
 			    }
 			    else {
@@ -87,6 +99,18 @@
 			    		$rejson_token = json_encode(['id_token' => $refresh_token_response['id_token'], 'refresh_token' => $refresh_token_response['refresh_token'] ,'created_time' => $retoken_creation_time], JSON_PRETTY_PRINT);
 
 						file_put_contents("../config/token.json", $rejson_token);
+
+						if($this->config['is_sandbox']) {
+							$logData = [
+								"API Title" => "Grant Token API",
+								"API URL" => stripslashes(($this->getApiurl())),
+								"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+								"Header" => $header,
+								"Body" => $this->secretdata,
+								"API Response" => $refresh_token_response
+							];
+				        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+				        }
 
 						return json_encode($refresh_token_response);
 					}
@@ -118,70 +142,182 @@
 	    }
 
 	    public function createAgreement($postdata) {
-	    	$this->readyAgreementParameter($postdata);
-	    	$this->setApiurl($this->getEnv().$this->config['createAgreementUrl']);
+	    	if($this->pgwmode == 'W') {
+		    	$this->readyAgreementParameter($postdata);
+		    	$this->setApiurl($this->getEnv().$this->config['createAgreementUrl']);
 
-	    	$header = [ 
-		        'Content-Type:application/json',
-		        'authorization:'.$this->getToken(),
-		        'x-app-key:'.$this->getAppkey()                                                   
-		    ];
+		    	$header = [ 
+			        'Content-Type:application/json',
+			        'authorization:'.$this->getToken(),
+			        'x-app-key:'.$this->getAppkey()                                                   
+			    ];
 
-		    $response = $this->Post($this->data, $header);
-		    $status = json_decode($response, true);
+			    $response = $this->Post($this->data, $header);
+			    $status = json_decode($response, true);
 
-		    if(isset($status['agreementStatus']) && $status['agreementStatus'] == "Initiated") {
-				return $status;
-		    } 
-		    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
-		    	return $status;
-		    }
-		    else {
-		    	return ['libMsg' => 'Unable to create agreement'];
+			    if($this->config['is_sandbox']) {
+					$logData = [
+						"API Title" => "Create Agreement API",
+						"API URL" => stripslashes(($this->getApiurl())),
+						"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+						"Header" => $header,
+						"Body" => $this->data,
+						"API Response" => json_decode($response, true)
+					];
+		        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+		        }
+
+			    if(isset($status['agreementStatus']) && $status['agreementStatus'] == "Initiated" && isset($status['bkashURL']) && $status['bkashURL'] != "") {
+					$this->redirect($status['bkashURL']);
+			    } 
+			    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
+			    	return $status;
+			    }
+			    else {
+			    	return ['libMsg' => 'Unable to create agreement'];
+			    }
+			}
+			else {
+		    	return ['libMsg' => 'Unable to create agreement in non agreement mode'];
 		    }
 	    }
 
 	    public function executeAgreement($payment_id) {
-	    	$this->setApiurl($this->getEnv().$this->config['executeAgreementUrl']);
+	    	if($this->pgwmode == 'W') {
+		    	$this->setApiurl($this->getEnv().$this->config['executeAgreementUrl']);
 
-	    	$header = [ 
-		        'Content-Type:application/json',
-		        'authorization:'.$this->getToken(),
-		        'x-app-key:'.$this->getAppkey()                                                   
-		    ];
+		    	$header = [ 
+			        'Content-Type:application/json',
+			        'authorization:'.$this->getToken(),
+			        'x-app-key:'.$this->getAppkey()                                                   
+			    ];
 
-		    $this->data['paymentID'] = $payment_id;
+			    $this->data['paymentID'] = $payment_id;
 
-		    $response = $this->Post($this->data, $header);
-		    
-			if($response) {
-			    $status = json_decode($response, true);
+			    $response = $this->Post($this->data, $header);
+			    
+				if($response) {
+				    $status = json_decode($response, true);
 
-			    if(isset($status['agreementStatus']) && $status['agreementStatus'] != "") {
-					return $status;
-			    } 
-			    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
-			    	return $status;
+				    if($this->config['is_sandbox']) {
+						$logData = [
+							"API Title" => "Execute Agreement API",
+							"API URL" => stripslashes(($this->getApiurl())),
+							"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+							"Header" => $header,
+							"Body" => $this->data,
+							"API Response" => json_decode($response, true)
+						];
+			        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+			        }
+
+				    if(isset($status['agreementStatus']) && $status['agreementStatus'] != "") {
+						return $status;
+				    } 
+				    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
+				    	return $status;
+				    }
+				    else {
+				    	return ['libMsg' => 'Error in execute agreement'];
+				    }
+				}
+				else {
+					$response = $this->queryPayment($payment_id);
+					$status = json_decode($response, true);
+
+				    if(isset($status['transactionStatus']) && $status['transactionStatus'] != "") {
+						return $status;
+				    } 
+				    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
+				    	return $status;
+				    }
+				    else {
+				    	return $status;
+				    }
+				}
+			}
+			else {
+		    	return ['libMsg' => 'Unable to execute agreement in non agreement mode'];
+		    }
+	    }
+
+	    public function agreementStatus($agreement_id) {
+	    	if($this->pgwmode == 'W') {
+		    	$this->setApiurl($this->getEnv().$this->config['queryAgreementUrl']);
+
+		    	$header = [ 
+			        'Content-Type:application/json',
+			        'authorization:'.$this->getToken(),
+			        'x-app-key:'.$this->getAppkey()                                                   
+			    ];
+
+			    $this->data['agreementID'] = $agreement_id;
+
+			    $response = $this->Post($this->data, $header);
+			    $query_agreement_response = json_decode($response, true);
+
+			    if($response) {
+			    	if($this->config['is_sandbox']) {
+						$logData = [
+							"API Title" => "Query Agreement API",
+							"API URL" => stripslashes(($this->getApiurl())),
+							"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+							"Header" => $header,
+							"Body" => $this->data,
+							"API Response" => json_decode($response, true)
+						];
+			        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+			        }
+
+			    	return $query_agreement_response;
 			    }
 			    else {
-			    	return ['libMsg' => 'Error in execute agreement'];
+			    	return ['libMsg' => 'Error in query agreement'];
 			    }
 			}
 			else {
-				$response = $this->queryPayment($payment_id);
-				$status = json_decode($response, true);
+		    	return ['libMsg' => 'Unable to query agreement in non agreement mode'];
+		    }
+	    }
 
-			    if(isset($status['transactionStatus']) && $status['transactionStatus'] != "") {
-					return $status;
-			    } 
-			    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
-			    	return $status;
+	    public function cancelAgreement($agreement_id) {
+	    	if($this->pgwmode == 'W') {
+		    	$this->setApiurl($this->getEnv().$this->config['cancelAgreementUrl']);
+
+		    	$header = [ 
+			        'Content-Type:application/json',
+			        'authorization:'.$this->getToken(),
+			        'x-app-key:'.$this->getAppkey()                                                   
+			    ];
+
+			    $this->data['agreementID'] = $agreement_id;
+
+			    $response = $this->Post($this->data, $header);
+			    $cancel_agreement_response = json_decode($response, true);
+
+			    if($response) {
+			    	if($this->config['is_sandbox']) {
+						$logData = [
+							"API Title" => "Cancel Agreement API",
+							"API URL" => stripslashes(($this->getApiurl())),
+							"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+							"Header" => $header,
+							"Body" => $this->data,
+							"API Response" => json_decode($response, true)
+						];
+			        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+			        }
+			    	return $cancel_agreement_response;
 			    }
 			    else {
-			    	return $status;
+			    	return ['libMsg' => 'Error in query agreement'];
 			    }
 			}
+			else {
+		    	return ['libMsg' => 'Unable to cancel agreement in non agreement mode'];
+		    }
 	    }
+
 
 	    public function createPayment($postdata) {
 	    	$this->readyParameter($postdata);
@@ -196,7 +332,19 @@
 		    $response = $this->Post($this->data, $header);
 		    $status = json_decode($response, true);
 
-		    if(isset($status['transactionStatus']) && $status['transactionStatus'] == "Initiated") {
+		    if($this->config['is_sandbox']) {
+				$logData = [
+					"API Title" => "Create Payment API",
+					"API URL" => stripslashes(($this->getApiurl())),
+					"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+					"Header" => $header,
+					"Body" => $this->data,
+					"API Response" => json_decode($response, true)
+				];
+	        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+	        }
+
+		    if(isset($status['transactionStatus']) && $status['transactionStatus'] == "Initiated" && isset($status['bkashURL']) && $status['bkashURL'] != "") {
 				$this->redirect($status['bkashURL']);
 		    } 
 		    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
@@ -221,6 +369,18 @@
 		    $response = $this->Post($this->data, $header);
 			if($response) {
 			    $status = json_decode($response, true);
+
+			    if($this->config['is_sandbox']) {
+					$logData = [
+						"API Title" => "Execute Payment API",
+						"API URL" => stripslashes(($this->getApiurl())),
+						"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+						"Header" => $header,
+						"Body" => $this->data,
+						"API Response" => json_decode($response, true)
+					];
+		        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+		        }
 
 			    if(isset($status['transactionStatus']) && $status['transactionStatus'] != "") {
 					return $status;
@@ -262,6 +422,17 @@
 		    $response = $this->Post($this->data, $header);
 
 		    if($response) {
+		    	if($this->config['is_sandbox']) {
+					$logData = [
+						"API Title" => "Query Payment API",
+						"API URL" => stripslashes(($this->getApiurl())),
+						"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+						"Header" => $header,
+						"Body" => $this->data,
+						"API Response" => json_decode($response, true)
+					];
+		        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+		        }
 		    	return $response;
 		    }
 		    else {
@@ -281,6 +452,18 @@
 		    $response = $this->Get($header);
 		    $decoded_response = json_decode($response, true);
 
+		    if($this->config['is_sandbox']) {
+				$logData = [
+					"API Title" => "Search Transaction API",
+					"API URL" => stripslashes(($this->getApiurl())),
+					"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+					"Header" => $header,
+					"Body" => $this->data,
+					"API Response" => json_decode($response, true)
+				];
+	        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+	        }
+
 	    	return $decoded_response;
 	    }
 
@@ -296,6 +479,18 @@
 
 		    $response = $this->Post($this->data, $header);
 		    $refund_response = json_decode($response, true);
+
+		    if($this->config['is_sandbox']) {
+				$logData = [
+					"API Title" => "Refund API",
+					"API URL" => stripslashes(($this->getApiurl())),
+					"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+					"Header" => $header,
+					"Body" => $this->data,
+					"API Response" => json_decode($response, true)
+				];
+	        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+	        }
 
 		    if((isset($refund_response['transactionStatus']) && $refund_response['transactionStatus'] != "") && (isset($refund_response['originalTrxID']) && $refund_response['originalTrxID'] != "")) {
 		    	return $refund_response;
@@ -321,6 +516,18 @@
 		    $response = $this->Post($this->data, $header);
 		    $refund_query_response = json_decode($response, true);
 
+		    if($this->config['is_sandbox']) {
+				$logData = [
+					"API Title" => "Refund Status API",
+					"API URL" => stripslashes(($this->getApiurl())),
+					"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+					"Header" => $header,
+					"Body" => $this->data,
+					"API Response" => json_decode($response, true)
+				];
+	        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+	        }
+
 		    if(isset($refund_query_response['statusCode']) && $refund_query_response['statusCode'] != "") {
 		    	return $refund_query_response;
 		    }
@@ -341,6 +548,18 @@
 
 			    $response = $this->Post("", $header);
 			    $status = json_decode($response, true);
+
+			    if($this->config['is_sandbox']) {
+					$logData = [
+						"API Title" => "Capture Payment API",
+						"API URL" => stripslashes(($this->getApiurl())),
+						"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
+						"Header" => $header,
+						"Body" => $this->data,
+						"API Response" => json_decode($response, true)
+					];
+		        	$this->writeLog("Sandbox_API_Response_Log", $logData);
+		        }
 
 			    if(isset($status['transactionStatus']) && $status['transactionStatus'] == "Completed") {
 					return $response;
@@ -367,10 +586,13 @@
 
 	    public function readyParameter(array $param) {
 	    	$this->data['mode'] = (isset($param['mode'])) ? $param['mode'] : $this->getIsAgreement();
-	    	$this->data['payerReference'] = (isset($param['payerReference'])) ? $param['payerReference'] : '01111111111';
 	    	$this->data['callbackURL'] = $this->getCallbackUrl();
-	    	if($this->pgwmode != "WO") {
+	    	if($this->pgwmode == "W") {
+	    		$this->data['payerReference'] = null;
 	        	$this->data['agreementID'] = (isset($param['agreementID'])) ? $param['agreementID'] : null;
+	        }
+	        else {
+	        	$this->data['payerReference'] = (isset($param['payerReference'])) ? $param['payerReference'] : '01111111111';
 	        }
 	    	$this->data['amount'] = (isset($param['amount'])) ? $param['amount'] : null;
 	    	$this->data['currency'] = "BDT";
