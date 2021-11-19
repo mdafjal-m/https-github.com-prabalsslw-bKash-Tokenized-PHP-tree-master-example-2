@@ -54,7 +54,7 @@
 				'password:'.$this->getPassword(),                                                               
 		        'username:'.$this->getUsername()                                                          
 		    ];	
-		    if (!file_exists("../config/token.json")) {
+		    if (!file_exists(__DIR__."/../config/token.json")) {
 		    	$response = $this->Post($this->secretdata, $header);
 		    	$token_response = json_decode($response, true);
 
@@ -63,7 +63,7 @@
 		    		$token_creation_time = date('Y-m-d H:i:s');
 		    		$json_token = json_encode(['id_token' => $token_response['id_token'], 'refresh_token' => $token_response['refresh_token'] ,'created_time' => $token_creation_time], JSON_PRETTY_PRINT);
 
-					file_put_contents("../config/token.json", $json_token);
+					file_put_contents(__DIR__."/../config/token.json", $json_token);
 
 					if($this->config['is_sandbox']) {
 						$logData = [
@@ -83,8 +83,8 @@
 			    	return ['libMsg' => 'Error in token creation'];
 			    }
 			}
-			else if(file_exists("../config/token.json")) {
-				$previous_token = json_decode(file_get_contents("../config/token.json"), true);
+			else if(file_exists(__DIR__."/../config/token.json")) {
+				$previous_token = json_decode(file_get_contents(__DIR__."/../config/token.json"), true);
 
 				$token_creation_time = date('Y-m-d H:i:s');
 				$token_start_time = new \DateTime($previous_token['created_time']);
@@ -98,11 +98,11 @@
 						$retoken_creation_time = date('Y-m-d H:i:s');
 			    		$rejson_token = json_encode(['id_token' => $refresh_token_response['id_token'], 'refresh_token' => $refresh_token_response['refresh_token'] ,'created_time' => $retoken_creation_time], JSON_PRETTY_PRINT);
 
-						file_put_contents("../config/token.json", $rejson_token);
+						file_put_contents(__DIR__."/../config/token.json", $rejson_token);
 
 						if($this->config['is_sandbox']) {
 							$logData = [
-								"API Title" => "Grant Token API",
+								"API Title" => "Refresh Token API",
 								"API URL" => stripslashes(($this->getApiurl())),
 								"Request Timestamp" => date('Y-m-d\TH:i:s.Z')."Z",
 								"Header" => $header,

@@ -15,14 +15,14 @@
                 if($users['wallet'] == $userwallet && $users['password'] == $userpassword) 
                 {
                     $_SESSION['user'] = $users['wallet']; 
-                    $_SESSION['msg'] = "Login Success</br>";
+                    $_SESSION['msg'] = "<div class='alert alert-warning'>Login Success</div>";
 
                     header('Location: ../view/bKash/pay.php');
                     break;
                 }
                 else
                 {
-                    $_SESSION['msg'] = "Wrong username or password!<br>";
+                    $_SESSION['msg'] = "<div class='alert alert-warning'>Wrong username or password!</div>";
                     header('Location: ../view/bKash/pay.php');
                 }
             }

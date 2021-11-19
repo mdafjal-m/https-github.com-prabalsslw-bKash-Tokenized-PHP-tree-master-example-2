@@ -161,6 +161,6 @@
 	    }
 
 	    public function writeLog($logName, $logData){
-		    file_put_contents("../logs/".$logName."_".date("Y-m-d_H").".json","\n============== ".date("Y-m-d H:i:s")." ==============\n".json_encode($logData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), FILE_APPEND);
+		    file_put_contents(__DIR__."/../logs/".$logName."_".date("Y-m-d_H").".json","\n============== ".date("Y-m-d H:i:s")." ==============\n".json_encode($logData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), FILE_APPEND);
 		}
 	}

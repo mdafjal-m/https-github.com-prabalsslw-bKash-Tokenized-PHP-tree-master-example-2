@@ -1,62 +1,91 @@
 <?php 
     session_start();
+    include '../../lib/Tokenized.php';
+
+    use Bkash\Library\Tokenized;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if(!empty($_POST['paybtn'])) {
-            if(!empty($_POST['pgmethod']) && $_POST['pgmethod'] == "WO")) {
+            if(!empty($_POST['pgmethod']) && $_POST['pgmethod'] == "WO") {
                 if(!empty($_POST['amount']) && !empty($_POST['wallet'])) {
-                    echo "Without Agreement";
+                    $wallet = !empty($_POST['wallet']) ? $_POST['wallet'] : '';
+                    $amount = !empty($_POST['amount']) ? $_POST['amount'] : '';
+
+                    $bKash = new Tokenized("WO");
+                    $post_data = [
+                        'amount' => $amount,
+                        'merchantInvoiceNumber' => strtoupper(uniqid()),
+                        'payerReference' => $wallet
+                    ];
+
+                    $response = $bKash->createPayment($post_data);
+                    if(isset($response['statusCode']) && $response['statusCode'] != ""){
+                        $_SESSION['msg'] = "<div class='alert alert-warning'><strong>Payment Failed</strong><br>".$response['statusMessage']."</div>";
+                        header('Location: ../view/bKash/pay.php');
+                    }
                 }
                 else {
-                    $_SESSION['msg'] = "Required data missing!<br>";
+                    $_SESSION['msg'] = "<div class='alert alert-warning'>Required data missing!</div>";
                     header('Location: ../view/bKash/pay.php');
                 }
             }
-            else if(!empty($_POST['pgmethod']) && $_POST['pgmethod'] == "W")) {
+            else if(!empty($_POST['pgmethod']) && $_POST['pgmethod'] == "W") {
                 if(!empty($_POST['amount']) && !empty($_POST['wallet'])) {
-                    echo "With Agreement";
+                    
+                    $user = (!empty($_SESSION['user'])) ? $_SESSION['user'] : '';
+                    $amount = (!empty($_POST['amount'])) ? $_POST['amount'] : '';
+
+                    $bKash = new Tokenized("W");
+                    $post_data = [
+                        'amount' => $amount,
+                        'merchantInvoiceNumber' => strtoupper(uniqid()),
+                        'payerReference' => $user
+                    ];
+
+                    $response = $bKash->createAgreement($post_data);
+                    if(isset($response['statusCode']) && $response['statusCode'] != ""){
+                        $_SESSION['msg'] = "<div class='alert alert-warning'><strong>Payment Failed</strong><br>".$response['statusMessage']."</div>";
+                        header('Location: ../view/bKash/pay.php');
+                    }
                 }
                 else {
-                    $_SESSION['msg'] = "Required data missing!<br>";
+                    $_SESSION['msg'] = "<div class='alert alert-warning'>Required data missing!</div>";
                     header('Location: ../view/bKash/pay.php');
                 }
             }
             else if(!empty($_POST['pgmethod'])) {
                 if(!empty($_POST['amount']) && !empty($_POST['pgmethod'])) {
-                    echo $_POST['pgmethod'];
+
+                    $bKash = new Tokenized("W");
+                    $post_data = [
+                        'amount' => !empty($_POST['amount']) ? $_POST['amount'] : '',
+                        'merchantInvoiceNumber' => strtoupper(uniqid()),
+                        'agreementID' => !empty($_POST['pgmethod']) ? $_POST['pgmethod'] : ''
+                    ];
+
+                    $response = $bKash->createPayment($post_data);
+                    if(isset($response['statusCode']) && $response['statusCode'] != ""){
+                        $_SESSION['msg'] = "<div class='alert alert-warning'><strong>Payment Failed</strong><br>".$response['statusMessage']."</div>";
+                        header('Location: ../view/bKash/pay.php');
+                    }
                 }
                 else {
-                    $_SESSION['msg'] = "Required data missing!<br>";
+                    $_SESSION['msg'] = "<div class='alert alert-warning'>Required data missing!</div>";
                     header('Location: ../view/bKash/pay.php');
                 }
             }
             else {
-                $_SESSION['msg'] = "Wrong in method!<br>";
+                $_SESSION['msg'] = "<div class='alert alert-warning'>Required data missing!</div>";
                 header('Location: ../view/bKash/pay.php');
             }
-            // $userwallet = !empty($_POST['userwallet']) ? $_POST['userwallet'] : '';
-            // $userpassword = !empty($_POST['userpassword']) ? $_POST['userpassword'] : '';
-
-            // $user_json = file_get_contents("../model/user.json");
-            // $user_data = json_decode($user_json, true);
-           
-            // foreach($user_data as $users) 
-            // {
-            //     if($users['wallet'] == $userwallet && $users['password'] == $userpassword) 
-            //     {
-            //         $_SESSION['user'] = $users['wallet']; 
-            //         $_SESSION['msg'] = "Login Success</br>";
-
-            //         header('Location: ../view/bKash/pay.php');
-            //         break;
-            //     }
-            //     else
-            //     {
-            //         $_SESSION['msg'] = "Wrong username or password!<br>";
-            //         header('Location: ../view/bKash/pay.php');
-            //     }
-            // }
+        }
+        else {
+            echo "Access Denied!";
         }
     }
+    else {
+        echo "Access Denied!";
+    }
+
 ?>

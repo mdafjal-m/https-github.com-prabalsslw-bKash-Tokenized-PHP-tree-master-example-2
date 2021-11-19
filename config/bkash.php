@@ -1,8 +1,8 @@
 <?php 
 	
 	return [
-		"callbackUrl" => "http://localhost/tokenized/test/callBack.php",
-		"agreementCallbackUrl" => "http://localhost/tokenized/test/agreeCallBack.php",
+		"callbackUrl" => "http://localhost/tokenized/example/controller/callback.php",
+		"agreementCallbackUrl" => "http://localhost/tokenized/example/controller/callback-agreement.php",
 		"sandboxBaseUrl" => "https://tokenized.sandbox.bka.sh/v1.2.0-beta",
 		"liveBaseUrl" => "https://tokenized.pay.bka.sh/v1.2.0-beta",
 		"grantTokenUrl" => "/tokenized/checkout/token/grant",

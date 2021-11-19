@@ -1,6 +1,14 @@
 <?php 
     session_start();
 
+    $user = (!empty($_SESSION['user'])) ? $_SESSION['user'] : '';
+
+    $agreement_json = file_get_contents("../../model/agreements.json");
+    $agreement_data = json_decode($agreement_json, true);
+
+    $transaction_json = file_get_contents("../../model/transactions.json");
+    $transaction_data = json_decode($transaction_json, true);
+
     if(!empty($_POST['wallet']) && !empty($_POST['amount'])) {
         $wallet = !empty($_POST['wallet']) ? $_POST['wallet'] : '';
         $amount = !empty($_POST['amount']) ? $_POST['amount'] : '';
@@ -37,8 +45,8 @@
                                     <li><a class="nav-link" data-toggle="tab" href="#login">Login</a></li>
                                 <?php } else { ?>
                                     <li><a class="nav-link" data-toggle="tab" href="#account">Account</a></li>
-                                    <li><a class="nav-link" href="../../controller/logout.php">Log Out</a></li>
                                 <?php } ?>
+                                <li><a class="nav-link" data-toggle="tab" href="#search">Search</a></li>
                             </ul>
                             <div class="tab-content">
                                 <img src="bkashlogo.png" alt="bKash" width="100%" height="90%" style=" display: block;margin-left: auto;margin-right: auto;">
@@ -48,7 +56,8 @@
                                     <form action="../../controller/payment.php" method="post">
                                         <input type="hidden" name="amount" value="<?= (!empty($_SESSION['amount']) ? $_SESSION['amount'] : '') ?>">
                                         <input type="hidden" name="wallet" value="<?= (!empty($_SESSION['wallet']) ? $_SESSION['wallet'] : '') ?>">
-                                        <div class="list-group">
+
+                                        <div class="list-group" style="font-size: 13px; font-weight: bold;">
                                             <a href="#" class="list-group-item">
                                                 <div class="radio">
                                                     <label><input type="radio" name="pgmethod" value="WO">Pay Without Agreement</label>
@@ -60,13 +69,27 @@
                                                         <label><input type="radio" name="pgmethod" value="W">Pay With Agreement</label>
                                                     </div>
                                                 </a>
+                                                <?php foreach($agreement_data as $agreement) 
+                                                    {
+                                                        if($agreement['payerReference'] == $user) 
+                                                        { ?>
+                                                            <a href="#" class="list-group-item" style="background: lavenderblush;">
+                                                                <div class="radio">
+                                                                    <label><input type="radio" name="pgmethod" value="<?= $agreement['agreementID'] ?>"><?= $agreement['customerMsisdn'] ?>
+                                                                </label>
+                                                                <label class="pull-right"><span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: red;" onclick='cancelAgreement("<?= $agreement['agreementID'] ?>")'></span></label>
+                                                                </div>
+                                                            </a>
+                                                        <?php 
+                                                        }
+                                                    } ?>
                                             <?php } ?> 
                                         </div>
                    
                                         <input type="submit" name="paybtn" class="btn btn-primary btn-block" value="Pay <?= (!empty($_SESSION['amount']) ? $_SESSION['amount'] : '') ?> ৳"/>
                                     </form>
                                 </div>
-                                <div id="login" class="tab-pane fade">
+                                <div id="login" class="tab-pane fade in">
                                     <form action="../../controller/login.php" method="post">
                                         <div class="list-group">
                                             <a href="#" class="list-group-item">
@@ -81,8 +104,30 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div id="account" class="tab-pane fade">
-                                    <h3>Account</h3>
+                                <div id="account" class="tab-pane fade in">
+                                    <h5><a class="nav-link pull-right" href="../../controller/logout.php">Log Out</a></h5>
+                                    <h5 style="font-size: 15px; font-weight: bold;">Payment History</h5><hr>
+                                    
+                                    <div class="list-group" style="overflow: scroll;height: 300px; font-size: 13px;">
+                                        <?php foreach($transaction_data as $transaction) 
+                                            {
+                                                if($transaction['payerReference'] == $user) 
+                                                { ?>
+                                                    <a href="#" class="list-group-item">
+                                                        <b>TrxID: <?= $transaction['trxID'] ?></b><br>
+                                                        <b>Amount:</b> <?= $transaction['amount'] ?><br>
+                                                        <b>Invoice:</b> <?= $transaction['merchantInvoiceNumber'] ?><br>
+                                                        <b>Date:</b> <?= $transaction['paymentExecuteTime'] ?><br>
+                                                        <b>Status: <?= $transaction['transactionStatus'] ?></b>
+                                                    </a>
+                                                <?php 
+                                                }
+                                            } ?> 
+                                    </div>
+
+                                </div>
+                                <div id="search" class="tab-pane fade in">
+                                    <h5 style="font-size: 15px; font-weight: bold;">Search Transaction</h5><hr>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +154,54 @@
             $('.bs-example-modal-sm').on('hidden.bs.modal', function () {
                 window.location.href = "../checkout.php";
             })
+
+    //         $('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
+    //     var $old_tab = $($(e.target).attr("href"));
+    //     var $new_tab = $($(e.relatedTarget).attr("href"));
+
+    //     if($new_tab.index() < $old_tab.index()){
+    //         $old_tab.css('position', 'relative').css("right", "0").show();
+    //         $old_tab.animate({"right":"-100%"}, 300, function () {
+    //             $old_tab.css("right", 0).removeAttr("style");
+    //         });
+    //     }
+    //     else {
+    //         $old_tab.css('position', 'relative').css("left", "0").show();
+    //         $old_tab.animate({"left":"-100%"}, 300, function () {
+    //             $old_tab.css("left", 0).removeAttr("style");
+    //         });
+    //     }
+    // });
+
+    // $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+    //     var $new_tab = $($(e.target).attr("href"));
+    //     var $old_tab = $($(e.relatedTarget).attr("href"));
+
+    //     if($new_tab.index() > $old_tab.index()){
+    //         $new_tab.css('position', 'relative').css("right", "-2500px");
+    //         $new_tab.animate({"right":"0"}, 500);
+    //     }
+    //     else {
+    //         $new_tab.css('position', 'relative').css("left", "-2500px");
+    //         $new_tab.animate({"left":"0"}, 500);
+    //     }
+    // });
+
+    // $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    //     // your code on active tab shown
+    // });
         });
+
+        function cancelAgreement(agreement_id) {
+            var r = confirm("Are you sure you want to cancel the agreement?");
+            if (r == true) {
+                window.location.href = "../../controller/cancelAgree.php?id="+agreement_id;
+            } 
+            else {
+                
+            }
+            
+        }
     </script>
 </html>
 <?php 
