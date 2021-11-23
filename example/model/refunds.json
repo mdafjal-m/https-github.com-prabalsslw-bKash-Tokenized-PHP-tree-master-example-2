@@ -1,0 +1,24 @@
+[
+    {
+        "statusCode": "0000",
+        "statusMessage": "Successful",
+        "originalTrxID": "8KO3056RN7",
+        "refundTrxID": "8KO6056RNA",
+        "transactionStatus": "Completed",
+        "amount": "20",
+        "currency": "BDT",
+        "charge": "0.00",
+        "completedTime": "2021-11-24T01:07:07:689 GMT+0600"
+    },
+    {
+        "statusCode": "0000",
+        "statusMessage": "Successful",
+        "originalTrxID": "8KO8056RNC",
+        "refundTrxID": "8KO0056RNE",
+        "transactionStatus": "Completed",
+        "amount": "15",
+        "currency": "BDT",
+        "charge": "0.00",
+        "completedTime": "2021-11-24T01:09:36:990 GMT+0600"
+    }
+]

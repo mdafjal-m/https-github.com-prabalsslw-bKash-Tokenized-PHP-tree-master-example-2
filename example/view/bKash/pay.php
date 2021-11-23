@@ -2,12 +2,15 @@
     session_start();
 
     $user = (!empty($_SESSION['user'])) ? $_SESSION['user'] : '';
-
-    $agreement_json = file_get_contents("../../model/agreements.json");
-    $agreement_data = json_decode($agreement_json, true);
-
-    $transaction_json = file_get_contents("../../model/transactions.json");
-    $transaction_data = json_decode($transaction_json, true);
+    $transaction_data = $agreement_data = "";
+    if(file_exists("../../model/agreements.json")) {
+        $agreement_json = file_get_contents("../../model/agreements.json");
+        $agreement_data = json_decode($agreement_json, true);
+    }
+    if(file_exists("../../model/transactions.json")) {
+        $transaction_json = file_get_contents("../../model/transactions.json");
+        $transaction_data = json_decode($transaction_json, true);
+    }
 
     if(!empty($_POST['wallet']) && !empty($_POST['amount'])) {
         $wallet = !empty($_POST['wallet']) ? $_POST['wallet'] : '';
@@ -60,22 +63,24 @@
                                         <div class="list-group" style="font-size: 13px; font-weight: bold;">
                                             <a href="#" class="list-group-item">
                                                 <div class="radio">
-                                                    <label><input type="radio" name="pgmethod" value="WO">Pay Without Agreement</label>
+                                                    <label style="color: #000066;"><input type="radio" name="pgmethod" value="WO">Pay Without Agreement</label>
                                                 </div>
                                             </a>
                                             <?php if(!empty($_SESSION['user'])) { ?>
                                                 <a href="#" class="list-group-item">
                                                     <div class="radio">
-                                                        <label><input type="radio" name="pgmethod" value="W">Pay With Agreement</label>
+                                                        <label style="color: #000066;"><input type="radio" name="pgmethod" value="W">Pay With Agreement</label>
                                                     </div>
                                                 </a>
-                                                <?php foreach($agreement_data as $agreement) 
+                                                <?php if($agreement_data != "") {
+                                                    foreach($agreement_data as $agreement) 
                                                     {
                                                         if($agreement['payerReference'] == $user) 
                                                         { ?>
                                                             <a href="#" class="list-group-item" style="background: lavenderblush;">
                                                                 <div class="radio">
-                                                                    <label><input type="radio" name="pgmethod" value="<?= $agreement['agreementID'] ?>"><?= $agreement['customerMsisdn'] ?>
+                                                                <label style="font-weight: bold;">
+                                                                    <input type="radio" name="pgmethod" value="<?= $agreement['agreementID'] ?>"><?= $agreement['customerMsisdn'] ?>
                                                                 </label>
                                                                 <label class="pull-right"><span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: red;" onclick='cancelAgreement("<?= $agreement['agreementID'] ?>")'></span></label>
                                                                 </div>
@@ -83,7 +88,9 @@
                                                         <?php 
                                                         }
                                                     } ?>
-                                            <?php } ?> 
+                                            <?php } 
+                                            }
+                                            ?> 
                                         </div>
                    
                                         <input type="submit" name="paybtn" class="btn btn-primary btn-block" value="Pay <?= (!empty($_SESSION['amount']) ? $_SESSION['amount'] : '') ?> ৳"/>
@@ -92,12 +99,12 @@
                                 <div id="login" class="tab-pane fade in">
                                     <form action="../../controller/login.php" method="post">
                                         <div class="list-group">
-                                            <a href="#" class="list-group-item">
+                                            <span class="list-group-item">
                                                 <input type="text" class="form-control" name="userwallet" required autocomplete="off" placeholder="Wallet Number" style="height: 40px; border: 0px;">
-                                            </a>
-                                            <a href="#" class="list-group-item">
+                                            </span>
+                                            <span href="#" class="list-group-item">
                                                <input type="password" class="form-control" name="userpassword" required autocomplete="off" placeholder="Password" style=" height: 40px; border: 0px;">
-                                            </a> 
+                                            </span> 
                                         </div>
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-default btn-block" name="loginbtn" value="Login"/>
@@ -109,7 +116,8 @@
                                     <h5 style="font-size: 15px; font-weight: bold;">Payment History</h5><hr>
                                     
                                     <div class="list-group" style="overflow: scroll;height: 300px; font-size: 13px;">
-                                        <?php foreach($transaction_data as $transaction) 
+                                        <?php if($transaction_data != "") {
+                                            foreach($transaction_data as $transaction) 
                                             {
                                                 if($transaction['payerReference'] == $user) 
                                                 { ?>
@@ -118,11 +126,14 @@
                                                         <b>Amount:</b> <?= $transaction['amount'] ?><br>
                                                         <b>Invoice:</b> <?= $transaction['merchantInvoiceNumber'] ?><br>
                                                         <b>Date:</b> <?= $transaction['paymentExecuteTime'] ?><br>
-                                                        <b>Status: <?= $transaction['transactionStatus'] ?></b>
+                                                        <b>Status: <?= $transaction['transactionStatus'] ?></b><br>
+                                                        <button class="btn btn-danger btn-xs pull-right" onclick='refundFunction("<?= $transaction['trxID'] ?>","<?= $transaction['amount'] ?>")'>Refund</button><br>
                                                     </a>
                                                 <?php 
                                                 }
-                                            } ?> 
+                                            } 
+                                        }
+                                            ?> 
                                     </div>
 
                                 </div>
@@ -200,7 +211,10 @@
             else {
                 
             }
-            
+        }
+        
+        function refundFunction(trxid, amount) {
+            window.location.href = "../refund.php?trxid="+trxid+"&amount="+amount;
         }
     </script>
 </html>

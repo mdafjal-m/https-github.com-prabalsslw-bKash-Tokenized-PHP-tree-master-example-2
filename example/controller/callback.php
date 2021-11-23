@@ -22,7 +22,13 @@
 			}
 			else {
 				$transactions = json_decode(file_get_contents("../model/transactions.json"), true);
-				array_push($transactions, $execute_response);
+				if($transactions != "") {
+					array_push($transactions, $execute_response);
+				}
+				else {
+					$transactions = [];
+					array_push($transactions, $execute_response);
+				}
 				file_put_contents("../model/transactions.json", json_encode($transactions, JSON_PRETTY_PRINT));
 			}
 			
@@ -34,7 +40,7 @@
 		else
 		{
 			print_r($execute_response);
-			if(isset($execute_response['statusCode']) && $execute_response['statusCode'] != ""){
+			if(isset($execute_response['statusCode']) && $execute_response['statusCode'] != "" && $response['statusCode'] != "0000"){
                 $_SESSION['msg'] = "<div class='alert alert-warning'><strong>Payment Failed</strong><br>".$execute_response['statusMessage']."</div>";
                 header('Location: ../view/bKash/pay.php');
             }

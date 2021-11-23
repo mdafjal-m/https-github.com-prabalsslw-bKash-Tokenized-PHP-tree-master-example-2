@@ -14,13 +14,13 @@
 
                     $bKash = new Tokenized("WO");
                     $post_data = [
-                        'amount' => $amount,
+                        'amount' => 0,//$amount,
                         'merchantInvoiceNumber' => strtoupper(uniqid()),
                         'payerReference' => $wallet
                     ];
 
                     $response = $bKash->createPayment($post_data);
-                    if(isset($response['statusCode']) && $response['statusCode'] != ""){
+                    if(isset($response['statusCode']) && $response['statusCode'] != "" && $response['statusCode'] != "0000"){
                         $_SESSION['msg'] = "<div class='alert alert-warning'><strong>Payment Failed</strong><br>".$response['statusMessage']."</div>";
                         header('Location: ../view/bKash/pay.php');
                     }
@@ -44,7 +44,7 @@
                     ];
 
                     $response = $bKash->createAgreement($post_data);
-                    if(isset($response['statusCode']) && $response['statusCode'] != ""){
+                    if(isset($response['statusCode']) && $response['statusCode'] != "" && $response['statusCode'] != "0000"){
                         $_SESSION['msg'] = "<div class='alert alert-warning'><strong>Payment Failed</strong><br>".$response['statusMessage']."</div>";
                         header('Location: ../view/bKash/pay.php');
                     }
@@ -64,8 +64,8 @@
                         'agreementID' => !empty($_POST['pgmethod']) ? $_POST['pgmethod'] : ''
                     ];
 
-                    $response = $bKash->createPayment($post_data);
-                    if(isset($response['statusCode']) && $response['statusCode'] != ""){
+                    $data = $bKash->createPayment($post_data);
+                    if(isset($response['statusCode']) && $response['statusCode'] != "" && $response['statusCode'] != "0000"){
                         $_SESSION['msg'] = "<div class='alert alert-warning'><strong>Payment Failed</strong><br>".$response['statusMessage']."</div>";
                         header('Location: ../view/bKash/pay.php');
                     }

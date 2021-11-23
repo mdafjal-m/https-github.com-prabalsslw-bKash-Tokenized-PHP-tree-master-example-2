@@ -1,14 +1,28 @@
 <?php 
 	session_start();
+	include '../../lib/Tokenized.php';
 
+    use Bkash\Library\Tokenized;
 	
 	if (!empty($_GET['id'])) {
 		
 		$agreement_id = $_GET['id'];
-		deleteSelectedIndexReGenJson($agreement_id);
 
-		$_SESSION['msg'] = "<div class='alert alert-warning'>Agreement Cancelled</div>";
-		header('Location: ../view/bKash/pay.php');
+		$bKash = new Tokenized("W");
+		$response = $bKash->cancelAgreement($agreement_id);
+
+		if(isset($response['statusCode']) && $response['statusCode'] != "" && $response['statusCode'] != "0000"){
+            $_SESSION['msg'] = "<div class='alert alert-warning'><strong>Agreement cancellation failed!</strong><br>".$response['statusMessage']."</div>";
+            header('Location: ../view/refund.php');
+        }
+        else if(isset($response['agreementStatus']) && $response['agreementStatus'] == "Completed") {
+			deleteSelectedIndexReGenJson($agreement_id);
+			$_SESSION['msg'] = "<div class='alert alert-warning'>Agreement Cancelled</div>";
+			header('Location: ../view/bKash/pay.php');
+		}
+		else{
+			$_SESSION['msg'] = "<div class='alert alert-warning'>Unable to cancel the agreement!</div>";
+		}
 	}
 	else {
 		$_SESSION['msg'] = "<div class='alert alert-warning'>Unable to cancel the agreement!</div>";

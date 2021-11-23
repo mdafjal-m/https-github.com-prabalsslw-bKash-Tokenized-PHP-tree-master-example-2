@@ -33,7 +33,13 @@
 					"customerMsisdn" => $execute_response['customerMsisdn'],
 					"agreementID" => $execute_response['agreementID']
 				];
-				array_push($agreements, $agreement_data);
+				if($transactions != "") {
+					array_push($agreements, $agreement_data);
+				}
+				else {
+					$agreements = [];
+					array_push($agreements, $agreement_data);
+				}
 				file_put_contents("../model/agreements.json", json_encode($agreements, JSON_PRETTY_PRINT));
 			}
 
@@ -53,7 +59,7 @@
 		else
 		{
 			print_r($execute_response);
-			if(isset($execute_response['statusCode']) && $execute_response['statusCode'] != ""){
+			if(isset($execute_response['statusCode']) && $execute_response['statusCode'] != "" && $response['statusCode'] != "0000"){
                 $_SESSION['msg'] = "<div class='alert alert-warning'><strong>Payment Failed</strong><br>".$execute_response['statusMessage']."</div>";
                 header('Location: ../view/bKash/pay.php');
             }
