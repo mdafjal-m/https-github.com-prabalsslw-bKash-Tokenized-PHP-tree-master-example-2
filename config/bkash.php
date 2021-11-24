@@ -25,6 +25,5 @@
 		"password" => "sandboxTokenizedUser12345",
 		"proxy" => "",
 		"is_sandbox" => true, 	# true - Sandbox, false - Live
-		// "agreement" => "WNWO", 	# `W` - With agreement, `WO` - Without agreement/URL Based 
 		"is_capture" => false 	# true - Authorization, false - Sale
 	];

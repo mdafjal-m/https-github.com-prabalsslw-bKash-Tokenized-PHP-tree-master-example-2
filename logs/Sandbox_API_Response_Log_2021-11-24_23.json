@@ -1,0 +1,664 @@
+
+============== 2021-11-24 23:09:15 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:09:15.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:09:43 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:09:43.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:19:57 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:19:57.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:20:09 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:20:09.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:20:33 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:20:33.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:20:40 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:20:40.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:21:51 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:21:51.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:23:34 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:23:34.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:24:16 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:24:16.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:24:17 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:24:17.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:24:24 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:24:24.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWEr"
+    },
+    "API Response": {
+        "statusCode": "2033",
+        "statusMessage": "Transaction Not Found"
+    }
+}
+============== 2021-11-24 23:26:39 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:26:39.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWEr"
+    },
+    "API Response": {
+        "statusCode": "2033",
+        "statusMessage": "Transaction Not Found"
+    }
+}
+============== 2021-11-24 23:26:54 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:26:54.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:29:33 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:29:33.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:34:34 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:34:34.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:37:04 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:37:04.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:38:30 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:38:30.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3NjIwNCwiaWF0IjoxNjM3NzcyNjA0fQ.pytF3ja6MnX9yKbixnQkvYMAXXNTNH_nwNKEsSTN3hx8GIi-JF6IL4KrvDzKQgIFGkcYyOp4-1iCz7Fo6UtzhgX4sXBTr5SsCiH1q1MKZYJSxUCDDyXPnHe6HwqHmHH1Oktpuz9eKabj2dpkT-yGM4B9rI5SyUpKT5ETGdbPO1BtF8YZfSUg_xDU4SnPqrYEuPsdP4jVl4lMdHOZk-7F5cMkhnz0ys_VgYEuiG9izEZ0685OHZs3ocG5oG9f17cRRwfOrH8JFs9qeK5KiSXJJgdL9X6MXSIhXu8ghIoxon99OAisuWMOixqD9kI_-QtCaWl60nbUBRjyvby1Jsr8ZQ",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:43:06 ==============
+{
+    "API Title": "Refresh Token API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/token/refresh",
+    "Request Timestamp": "2021-11-24T23:43:06.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "password:sandboxTokenizedUser12345",
+        "username:sandboxTokenizedUser01"
+    ],
+    "Body": {
+        "app_key": "7epj60ddf7id0chhcm3vkejtab",
+        "app_secret": "18mvi27h9l38dtdv110rq5g603blk0fhh5hg46gfb27cp2rbs66f",
+        "refresh_token": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.RAmZo4u_RRXFHL2qxExeLpZUCLEWve2Z0mvUdqgShmg3umnMkxdIb3Wnw03Hf3xWncVSzrNK9oAPsP9l4pJqxth8aExCZyvRksueFnKSTVAr-7Z1_RID2rtSqUkI9i1SDZ2u3tx5veo5aRbIISG_-i6oRAMvZ9Fa_aUn1EKWncs6FasSjss0OtWQywqCf8k7rRpr04z6y4M0Vw2ReQK6LsVwlA2Seo96JnGjepGiNYtXLnIABGAwRo2dj1vN5CFq81shGaJrZuJLyraPfocXD8ByZEE4p9iMCTUHhL1AV54wZKYuB6QtE4994f8iVBdRkrNaiuI9_RHBlFZgcakqUw.6f9DyOtvPVOBjcyD.ZifuAT6YTsbcgqDRLrrC0-MK34lO00f6ainbglaeXy3Vj6sA8HgO5qOaq9CG_wpadBlP-5gzTqjVsdTanNF6ijLK9Wqu0YKnry2-C4zhkq2sjhLcmYdshsPgubysoxvBEeGam5OAr-Hiz3lEj6lAy0uVmlypR6q_9qVZOMGdPue9M0MfGeqFy31h9oPzt4kMyIVoxbVNxY9DK4_dLCANrz1fXQzXZsOpRUpl0Pb0IXaH1iQk2pP_8DBJ5QY0gtzY2T6Kn6KjAwKDdiMvkTxTkMzIinpbdezYQBYEcygfcUtxylI_Q8ChxYAQKqlst58KxNOOrt-KOGc5Qi0-yuEei0k3wx9ttJVi-Mak8NUS2unTIdEOM-gvtYlbkVVU__KMOFnO3UXrYFdrXIB923hqxPPN1HbL0yVWYwJc5Fwvg7l6aGfqGocsylmuzN9afzQEQ3dowups64D794aYurjax5pl7uSHZa5Po_TuID7iQfWfexXYLFKlDI_UrqGDGJ4OtN0G5ESZhP8ROsKE5ItCaAFlJV9aw4AMVAOnr89walQl8j-MLSrpoUi2Wmoi5XmV7AJW6H6TFH-Xx2OqJZL7e9XoANwkFQDrRK3yzWgFPRg53pm0nrEthYe3OMPnKSnAxs2AoCZ7jFwtn_SfyfMEI5MYsPuveH7v-ySERGZCgPbxJk3DSZQ9A1Ej56VTBZy5fd6kTC-FBXaBFMw6UZcttzE1F7UyQMGNJ1IOEx9TEMo2Cmu8Tslh7xgfcY_SqZm87hVaXN7wfnInzb-Js5vcHAIdFDyr8loe4i4-kzKVBRdVUeqyFl7i3PcvTtPiMyrFHS2hrDlSgLhadHZj5QeTMX4RTpXvuR4St4bK-hThK9vpwS968omdWCJlxCrH4ZyNuPj9_t_tXmGFUmstg-uond178BkNHdhyt6lHVBE9Rtl736Hzou4uC0nLanV23STLt0xOUS_qEY5gfIMPEtE16FhayE1VSRO4gEM3EuQ1eGPk59hxVirYmu7VgvWklfs2Fsisprf9HOYggWJ2QyNq6bjmqybvpHcJvs_gb0e8VBop7l8hqVb5XCeob-ZnWUBKPeCdYi413x5VqA-F97AX9EWdskDauonDr9NfShouaHiri73-fFTUBsAWxk791DsnIcqc2VEsG_2UNV9kRfSsrTUzdMRwYsXJMJRq62DwHdPYAOhy5FmGFOeRH28Jg9hYjGBX0XpwLd3rdbyDW973a5-fUjPg-tqgHEa3Pk77LIXixgdC4LYVPPomMeRsL9gpyIBhDa_I0DxVjEfr64mFzmjYi1Etc5j22RxI_HPIHLPbTlPfpxI.fVoD9nqeRlry4W5KD-wtOg"
+    },
+    "API Response": {
+        "statusCode": "0000",
+        "statusMessage": "Successful",
+        "id_token": "eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3OTM4NywiaWF0IjoxNjM3Nzc1Nzg3fQ.0MNF5tCkNotV71Kbq7VW6pPEbN7Q94St2VsZuZWaXCcjjM7uWgGCo_P-e-OVasAOKO9bPdaGexzHDMYD_9gF3AteqCa-ZXWtCmrDN4zqiLo7wAUaLv1gRoSnPUUiX5O58oSv71c3-gIa5yIuRLx0qDZEDs90inB8FGTBSiHU8nQ_8qe-Xqov1z9v8V7HN_pEos70ybpDtAqGap3xSuc6OieWBamZKdPZ-uuKx69qxGDMN9w1fPK-LHx9cXhkQiUg0gHQyp8GqMMSLqUW1t4r8sREqTYU6m8LSA2n_eGjeOd5AL4Om9Rv7a0nG_21jzSYlT0ThZGSvKPqrd9RQpK54w",
+        "token_type": "Bearer",
+        "expires_in": 3600,
+        "refresh_token": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.RAmZo4u_RRXFHL2qxExeLpZUCLEWve2Z0mvUdqgShmg3umnMkxdIb3Wnw03Hf3xWncVSzrNK9oAPsP9l4pJqxth8aExCZyvRksueFnKSTVAr-7Z1_RID2rtSqUkI9i1SDZ2u3tx5veo5aRbIISG_-i6oRAMvZ9Fa_aUn1EKWncs6FasSjss0OtWQywqCf8k7rRpr04z6y4M0Vw2ReQK6LsVwlA2Seo96JnGjepGiNYtXLnIABGAwRo2dj1vN5CFq81shGaJrZuJLyraPfocXD8ByZEE4p9iMCTUHhL1AV54wZKYuB6QtE4994f8iVBdRkrNaiuI9_RHBlFZgcakqUw.6f9DyOtvPVOBjcyD.ZifuAT6YTsbcgqDRLrrC0-MK34lO00f6ainbglaeXy3Vj6sA8HgO5qOaq9CG_wpadBlP-5gzTqjVsdTanNF6ijLK9Wqu0YKnry2-C4zhkq2sjhLcmYdshsPgubysoxvBEeGam5OAr-Hiz3lEj6lAy0uVmlypR6q_9qVZOMGdPue9M0MfGeqFy31h9oPzt4kMyIVoxbVNxY9DK4_dLCANrz1fXQzXZsOpRUpl0Pb0IXaH1iQk2pP_8DBJ5QY0gtzY2T6Kn6KjAwKDdiMvkTxTkMzIinpbdezYQBYEcygfcUtxylI_Q8ChxYAQKqlst58KxNOOrt-KOGc5Qi0-yuEei0k3wx9ttJVi-Mak8NUS2unTIdEOM-gvtYlbkVVU__KMOFnO3UXrYFdrXIB923hqxPPN1HbL0yVWYwJc5Fwvg7l6aGfqGocsylmuzN9afzQEQ3dowups64D794aYurjax5pl7uSHZa5Po_TuID7iQfWfexXYLFKlDI_UrqGDGJ4OtN0G5ESZhP8ROsKE5ItCaAFlJV9aw4AMVAOnr89walQl8j-MLSrpoUi2Wmoi5XmV7AJW6H6TFH-Xx2OqJZL7e9XoANwkFQDrRK3yzWgFPRg53pm0nrEthYe3OMPnKSnAxs2AoCZ7jFwtn_SfyfMEI5MYsPuveH7v-ySERGZCgPbxJk3DSZQ9A1Ej56VTBZy5fd6kTC-FBXaBFMw6UZcttzE1F7UyQMGNJ1IOEx9TEMo2Cmu8Tslh7xgfcY_SqZm87hVaXN7wfnInzb-Js5vcHAIdFDyr8loe4i4-kzKVBRdVUeqyFl7i3PcvTtPiMyrFHS2hrDlSgLhadHZj5QeTMX4RTpXvuR4St4bK-hThK9vpwS968omdWCJlxCrH4ZyNuPj9_t_tXmGFUmstg-uond178BkNHdhyt6lHVBE9Rtl736Hzou4uC0nLanV23STLt0xOUS_qEY5gfIMPEtE16FhayE1VSRO4gEM3EuQ1eGPk59hxVirYmu7VgvWklfs2Fsisprf9HOYggWJ2QyNq6bjmqybvpHcJvs_gb0e8VBop7l8hqVb5XCeob-ZnWUBKPeCdYi413x5VqA-F97AX9EWdskDauonDr9NfShouaHiri73-fFTUBsAWxk791DsnIcqc2VEsG_2UNV9kRfSsrTUzdMRwYsXJMJRq62DwHdPYAOhy5FmGFOeRH28Jg9hYjGBX0XpwLd3rdbyDW973a5-fUjPg-tqgHEa3Pk77LIXixgdC4LYVPPomMeRsL9gpyIBhDa_I0DxVjEfr64mFzmjYi1Etc5j22RxI_HPIHLPbTlPfpxI.fVoD9nqeRlry4W5KD-wtOg"
+    }
+}
+============== 2021-11-24 23:43:06 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:43:06.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3OTM4NywiaWF0IjoxNjM3Nzc1Nzg3fQ.0MNF5tCkNotV71Kbq7VW6pPEbN7Q94St2VsZuZWaXCcjjM7uWgGCo_P-e-OVasAOKO9bPdaGexzHDMYD_9gF3AteqCa-ZXWtCmrDN4zqiLo7wAUaLv1gRoSnPUUiX5O58oSv71c3-gIa5yIuRLx0qDZEDs90inB8FGTBSiHU8nQ_8qe-Xqov1z9v8V7HN_pEos70ybpDtAqGap3xSuc6OieWBamZKdPZ-uuKx69qxGDMN9w1fPK-LHx9cXhkQiUg0gHQyp8GqMMSLqUW1t4r8sREqTYU6m8LSA2n_eGjeOd5AL4Om9Rv7a0nG_21jzSYlT0ThZGSvKPqrd9RQpK54w",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KJ2056KWE"
+    },
+    "API Response": {
+        "trxID": "8KJ2056KWE",
+        "initiationTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "completedTime": "2021-11-19T19:19:41:000 GMT+0600",
+        "transactionType": "bKash Tokenized Checkout via API",
+        "customerMsisdn": "8801770618575",
+        "transactionStatus": "Completed",
+        "amount": "10",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:43:45 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:43:45.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3OTM4NywiaWF0IjoxNjM3Nzc1Nzg3fQ.0MNF5tCkNotV71Kbq7VW6pPEbN7Q94St2VsZuZWaXCcjjM7uWgGCo_P-e-OVasAOKO9bPdaGexzHDMYD_9gF3AteqCa-ZXWtCmrDN4zqiLo7wAUaLv1gRoSnPUUiX5O58oSv71c3-gIa5yIuRLx0qDZEDs90inB8FGTBSiHU8nQ_8qe-Xqov1z9v8V7HN_pEos70ybpDtAqGap3xSuc6OieWBamZKdPZ-uuKx69qxGDMN9w1fPK-LHx9cXhkQiUg0gHQyp8GqMMSLqUW1t4r8sREqTYU6m8LSA2n_eGjeOd5AL4Om9Rv7a0nG_21jzSYlT0ThZGSvKPqrd9RQpK54w",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KO0056RNE"
+    },
+    "API Response": {
+        "trxID": "8KO0056RNE",
+        "initiationTime": "2021-11-24T01:07:18:000 GMT+0600",
+        "completedTime": "2021-11-24T01:07:18:000 GMT+0600",
+        "transactionType": "bKash Checkout Reversal via API",
+        "customerMsisdn": "01619777283",
+        "transactionStatus": "Completed",
+        "amount": "15",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:45:00 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:45:00.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3OTM4NywiaWF0IjoxNjM3Nzc1Nzg3fQ.0MNF5tCkNotV71Kbq7VW6pPEbN7Q94St2VsZuZWaXCcjjM7uWgGCo_P-e-OVasAOKO9bPdaGexzHDMYD_9gF3AteqCa-ZXWtCmrDN4zqiLo7wAUaLv1gRoSnPUUiX5O58oSv71c3-gIa5yIuRLx0qDZEDs90inB8FGTBSiHU8nQ_8qe-Xqov1z9v8V7HN_pEos70ybpDtAqGap3xSuc6OieWBamZKdPZ-uuKx69qxGDMN9w1fPK-LHx9cXhkQiUg0gHQyp8GqMMSLqUW1t4r8sREqTYU6m8LSA2n_eGjeOd5AL4Om9Rv7a0nG_21jzSYlT0ThZGSvKPqrd9RQpK54w",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KO0056RNEk"
+    },
+    "API Response": {
+        "statusCode": "2033",
+        "statusMessage": "Transaction Not Found"
+    }
+}
+============== 2021-11-24 23:45:16 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:45:16.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3OTM4NywiaWF0IjoxNjM3Nzc1Nzg3fQ.0MNF5tCkNotV71Kbq7VW6pPEbN7Q94St2VsZuZWaXCcjjM7uWgGCo_P-e-OVasAOKO9bPdaGexzHDMYD_9gF3AteqCa-ZXWtCmrDN4zqiLo7wAUaLv1gRoSnPUUiX5O58oSv71c3-gIa5yIuRLx0qDZEDs90inB8FGTBSiHU8nQ_8qe-Xqov1z9v8V7HN_pEos70ybpDtAqGap3xSuc6OieWBamZKdPZ-uuKx69qxGDMN9w1fPK-LHx9cXhkQiUg0gHQyp8GqMMSLqUW1t4r8sREqTYU6m8LSA2n_eGjeOd5AL4Om9Rv7a0nG_21jzSYlT0ThZGSvKPqrd9RQpK54w",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "nkjnkj"
+    },
+    "API Response": {
+        "statusCode": "2033",
+        "statusMessage": "Transaction Not Found"
+    }
+}
+============== 2021-11-24 23:45:49 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:45:49.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3OTM4NywiaWF0IjoxNjM3Nzc1Nzg3fQ.0MNF5tCkNotV71Kbq7VW6pPEbN7Q94St2VsZuZWaXCcjjM7uWgGCo_P-e-OVasAOKO9bPdaGexzHDMYD_9gF3AteqCa-ZXWtCmrDN4zqiLo7wAUaLv1gRoSnPUUiX5O58oSv71c3-gIa5yIuRLx0qDZEDs90inB8FGTBSiHU8nQ_8qe-Xqov1z9v8V7HN_pEos70ybpDtAqGap3xSuc6OieWBamZKdPZ-uuKx69qxGDMN9w1fPK-LHx9cXhkQiUg0gHQyp8GqMMSLqUW1t4r8sREqTYU6m8LSA2n_eGjeOd5AL4Om9Rv7a0nG_21jzSYlT0ThZGSvKPqrd9RQpK54w",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KO0056RNE"
+    },
+    "API Response": {
+        "trxID": "8KO0056RNE",
+        "initiationTime": "2021-11-24T01:07:18:000 GMT+0600",
+        "completedTime": "2021-11-24T01:07:18:000 GMT+0600",
+        "transactionType": "bKash Checkout Reversal via API",
+        "customerMsisdn": "01619777283",
+        "transactionStatus": "Completed",
+        "amount": "15",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:46:29 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:46:29.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3OTM4NywiaWF0IjoxNjM3Nzc1Nzg3fQ.0MNF5tCkNotV71Kbq7VW6pPEbN7Q94St2VsZuZWaXCcjjM7uWgGCo_P-e-OVasAOKO9bPdaGexzHDMYD_9gF3AteqCa-ZXWtCmrDN4zqiLo7wAUaLv1gRoSnPUUiX5O58oSv71c3-gIa5yIuRLx0qDZEDs90inB8FGTBSiHU8nQ_8qe-Xqov1z9v8V7HN_pEos70ybpDtAqGap3xSuc6OieWBamZKdPZ-uuKx69qxGDMN9w1fPK-LHx9cXhkQiUg0gHQyp8GqMMSLqUW1t4r8sREqTYU6m8LSA2n_eGjeOd5AL4Om9Rv7a0nG_21jzSYlT0ThZGSvKPqrd9RQpK54w",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KO0056RNE"
+    },
+    "API Response": {
+        "trxID": "8KO0056RNE",
+        "initiationTime": "2021-11-24T01:07:18:000 GMT+0600",
+        "completedTime": "2021-11-24T01:07:18:000 GMT+0600",
+        "transactionType": "bKash Checkout Reversal via API",
+        "customerMsisdn": "01619777283",
+        "transactionStatus": "Completed",
+        "amount": "15",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:49:23 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:49:23.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3OTM4NywiaWF0IjoxNjM3Nzc1Nzg3fQ.0MNF5tCkNotV71Kbq7VW6pPEbN7Q94St2VsZuZWaXCcjjM7uWgGCo_P-e-OVasAOKO9bPdaGexzHDMYD_9gF3AteqCa-ZXWtCmrDN4zqiLo7wAUaLv1gRoSnPUUiX5O58oSv71c3-gIa5yIuRLx0qDZEDs90inB8FGTBSiHU8nQ_8qe-Xqov1z9v8V7HN_pEos70ybpDtAqGap3xSuc6OieWBamZKdPZ-uuKx69qxGDMN9w1fPK-LHx9cXhkQiUg0gHQyp8GqMMSLqUW1t4r8sREqTYU6m8LSA2n_eGjeOd5AL4Om9Rv7a0nG_21jzSYlT0ThZGSvKPqrd9RQpK54w",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KO0056RNE"
+    },
+    "API Response": {
+        "trxID": "8KO0056RNE",
+        "initiationTime": "2021-11-24T01:07:18:000 GMT+0600",
+        "completedTime": "2021-11-24T01:07:18:000 GMT+0600",
+        "transactionType": "bKash Checkout Reversal via API",
+        "customerMsisdn": "01619777283",
+        "transactionStatus": "Completed",
+        "amount": "15",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}
+============== 2021-11-24 23:49:33 ==============
+{
+    "API Title": "Search Transaction API",
+    "API URL": "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/general/searchTransaction",
+    "Request Timestamp": "2021-11-24T23:49:33.21600Z",
+    "Header": [
+        "Content-Type:application/json",
+        "authorization:eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwZTVjOGU4Ni0xMTQzLTQyNjEtOTJkYy02MTQwMTNhMmNkYTAiLCJhdWQiOiI3ZXBqNjBkZGY3aWQwY2hoY20zdmtlanRhYiIsImV2ZW50X2lkIjoiNTVmMjBjYzEtNGNmOC00YWU1LWFkOTgtZmYyMGNiMTYzYmJhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2MzczMjI1OTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMSIsImV4cCI6MTYzNzc3OTM4NywiaWF0IjoxNjM3Nzc1Nzg3fQ.0MNF5tCkNotV71Kbq7VW6pPEbN7Q94St2VsZuZWaXCcjjM7uWgGCo_P-e-OVasAOKO9bPdaGexzHDMYD_9gF3AteqCa-ZXWtCmrDN4zqiLo7wAUaLv1gRoSnPUUiX5O58oSv71c3-gIa5yIuRLx0qDZEDs90inB8FGTBSiHU8nQ_8qe-Xqov1z9v8V7HN_pEos70ybpDtAqGap3xSuc6OieWBamZKdPZ-uuKx69qxGDMN9w1fPK-LHx9cXhkQiUg0gHQyp8GqMMSLqUW1t4r8sREqTYU6m8LSA2n_eGjeOd5AL4Om9Rv7a0nG_21jzSYlT0ThZGSvKPqrd9RQpK54w",
+        "x-app-key:7epj60ddf7id0chhcm3vkejtab"
+    ],
+    "Body": {
+        "trxID": "8KO0056RNE"
+    },
+    "API Response": {
+        "trxID": "8KO0056RNE",
+        "initiationTime": "2021-11-24T01:07:18:000 GMT+0600",
+        "completedTime": "2021-11-24T01:07:18:000 GMT+0600",
+        "transactionType": "bKash Checkout Reversal via API",
+        "customerMsisdn": "01619777283",
+        "transactionStatus": "Completed",
+        "amount": "15",
+        "currency": "BDT",
+        "organizationShortCode": "50011",
+        "statusCode": "0000",
+        "statusMessage": "Successful"
+    }
+}

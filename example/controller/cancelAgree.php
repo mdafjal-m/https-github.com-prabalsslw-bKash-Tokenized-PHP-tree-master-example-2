@@ -10,12 +10,13 @@
 
 		$bKash = new Tokenized("W");
 		$response = $bKash->cancelAgreement($agreement_id);
+		print_r($response);
 
 		if(isset($response['statusCode']) && $response['statusCode'] != "" && $response['statusCode'] != "0000"){
             $_SESSION['msg'] = "<div class='alert alert-warning'><strong>Agreement cancellation failed!</strong><br>".$response['statusMessage']."</div>";
-            header('Location: ../view/refund.php');
+            header('Location: ../view/bKash/pay.php');
         }
-        else if(isset($response['agreementStatus']) && $response['agreementStatus'] == "Completed") {
+        else if(isset($response['agreementStatus']) && $response['agreementStatus'] == "Cancelled") {
 			deleteSelectedIndexReGenJson($agreement_id);
 			$_SESSION['msg'] = "<div class='alert alert-warning'>Agreement Cancelled</div>";
 			header('Location: ../view/bKash/pay.php');

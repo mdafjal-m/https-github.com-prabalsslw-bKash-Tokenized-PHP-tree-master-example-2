@@ -139,6 +139,16 @@
                                 </div>
                                 <div id="search" class="tab-pane fade in">
                                     <h5 style="font-size: 15px; font-weight: bold;">Search Transaction</h5><hr>
+                                    <div class="list-group">
+                                        <span class="list-group-item">
+                                            <input type="text" class="form-control" name="trxid" id="trxid" autocomplete="off" placeholder="TrxID" style="height: 40px; border: 0px;">
+                                        </span>
+                                    </div>
+                                    <div class="list-group srcdata">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-info btn-block" id="srctrx">Search</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -166,41 +176,47 @@
                 window.location.href = "../checkout.php";
             })
 
-    //         $('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
-    //     var $old_tab = $($(e.target).attr("href"));
-    //     var $new_tab = $($(e.relatedTarget).attr("href"));
+            $('#srctrx').click(function(){
+                var txid = $('#trxid').val();
+                if(txid != "") {
+                    var html = "";
+                    $.ajax({
+                        url : "../../controller/ajax-search.php",
+                        method : "POST",
+                        data : {id: txid},
+                        async : true,
+                        dataType : 'json',
+                        success: function(data){
+                            if(data != null && data.statusCode == "0000"){
+                                html += '<a href="#" class="list-group-item">';
+                                html += '<b>TrxID: '+data.trxID+'</b><br>';
+                                html += '<b>Amount:</b> '+data.amount+'<br>';
+                                html += '<b>Customer MSISDN:</b> '+data.customerMsisdn+'<br>';
+                                html += '<b>Date:</b> '+data.completedTime+'<br>';
+                                html += '<b>Type: </b>'+data.transactionType+'</b><br>';
+                                html += '<b>Status: '+data.transactionStatus+'<br>';
+                                html += '<button class="btn btn-danger btn-xs pull-right" onclick="refundFunction(\''+data.trxID+'\',\''+data.amount+'\')">Refund</button><br>';
+                                html += '</a>';
 
-    //     if($new_tab.index() < $old_tab.index()){
-    //         $old_tab.css('position', 'relative').css("right", "0").show();
-    //         $old_tab.animate({"right":"-100%"}, 300, function () {
-    //             $old_tab.css("right", 0).removeAttr("style");
-    //         });
-    //     }
-    //     else {
-    //         $old_tab.css('position', 'relative').css("left", "0").show();
-    //         $old_tab.animate({"left":"-100%"}, 300, function () {
-    //             $old_tab.css("left", 0).removeAttr("style");
-    //         });
-    //     }
-    // });
+                                $('.srcdata').html(html);
+                            }
+                            else if(data.statusCode != "0000") {
+                                html += '<a href="#" class="list-group-item">';
+                                html += '<b>Sorry!</b><br>';
+                                html += data.statusMessage;
+                                html += '</a>';
 
-    // $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-    //     var $new_tab = $($(e.target).attr("href"));
-    //     var $old_tab = $($(e.relatedTarget).attr("href"));
+                                $('.srcdata').html(html);
+                            }
+                        }
+                    }); 
+                }
+                else {
+                    alert("Please input TrxID");
+                }
+            });
 
-    //     if($new_tab.index() > $old_tab.index()){
-    //         $new_tab.css('position', 'relative').css("right", "-2500px");
-    //         $new_tab.animate({"right":"0"}, 500);
-    //     }
-    //     else {
-    //         $new_tab.css('position', 'relative').css("left", "-2500px");
-    //         $new_tab.animate({"left":"0"}, 500);
-    //     }
-    // });
 
-    // $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-    //     // your code on active tab shown
-    // });
         });
 
         function cancelAgreement(agreement_id) {

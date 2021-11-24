@@ -33,7 +33,7 @@
 					"customerMsisdn" => $execute_response['customerMsisdn'],
 					"agreementID" => $execute_response['agreementID']
 				];
-				if($transactions != "") {
+				if(!empty($agreements)) {
 					array_push($agreements, $agreement_data);
 				}
 				else {

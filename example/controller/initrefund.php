@@ -49,7 +49,7 @@
 					}
 					else {
 						$refunds = json_decode(file_get_contents("../model/refunds.json"), true);
-						if($refunds != "") {
+						if(!empty($refunds)) {
 							array_push($refunds, $response);
 						}
 						else {

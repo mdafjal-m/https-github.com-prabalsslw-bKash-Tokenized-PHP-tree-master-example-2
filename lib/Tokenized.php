@@ -41,7 +41,9 @@
 	        	$this->setCapture('sale');
 	        }
 	        $token_api_response = json_decode($this->grantToken(), true);
-	       	$this->setToken($token_api_response['id_token']);
+	        if(!empty($token_api_response['id_token'])) {
+	       		$this->setToken($token_api_response['id_token']);
+	       	}
 	    }
 
 	    public function grantToken() {
@@ -441,7 +443,7 @@
 	    }
 
 	    public function searchTransaction($trxid) {
-	    	$this->setApiurl($this->getEnv().$this->config['searchTranUrl'].$trxid);
+	    	$this->setApiurl($this->getEnv().$this->config['searchTranUrl']);
 
 	    	$header = [ 
 		        'Content-Type:application/json',
@@ -449,7 +451,9 @@
 		        'x-app-key:'.$this->getAppkey()                                                   
 		    ];
 
-		    $response = $this->Get($header);
+		    $this->data['trxID'] = $trxid;
+
+		    $response = $this->Post($this->data, $header);
 		    $decoded_response = json_decode($response, true);
 
 		    if($this->config['is_sandbox']) {

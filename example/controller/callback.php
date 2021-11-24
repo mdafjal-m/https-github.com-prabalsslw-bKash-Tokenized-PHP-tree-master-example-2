@@ -22,7 +22,7 @@
 			}
 			else {
 				$transactions = json_decode(file_get_contents("../model/transactions.json"), true);
-				if($transactions != "") {
+				if(!empty($transactions)) {
 					array_push($transactions, $execute_response);
 				}
 				else {
