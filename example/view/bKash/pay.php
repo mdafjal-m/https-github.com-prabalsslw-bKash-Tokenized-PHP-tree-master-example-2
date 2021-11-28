@@ -145,6 +145,9 @@
                                         </span>
                                     </div>
                                     <div class="list-group srcdata">
+                                        <div id="loader">
+                                            <span>Please Wait...</span>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <button class="btn btn-info btn-block" id="srctrx">Search</button>
@@ -175,7 +178,7 @@
             $('.bs-example-modal-sm').on('hidden.bs.modal', function () {
                 window.location.href = "../checkout.php";
             })
-
+            $("#loader").hide();
             $('#srctrx').click(function(){
                 var txid = $('#trxid').val();
                 if(txid != "") {
@@ -186,6 +189,9 @@
                         data : {id: txid},
                         async : true,
                         dataType : 'json',
+                        beforeSend: function(){
+                            $("#loader").show();
+                        },
                         success: function(data){
                             if(data != null && data.statusCode == "0000"){
                                 html += '<a href="#" class="list-group-item">';

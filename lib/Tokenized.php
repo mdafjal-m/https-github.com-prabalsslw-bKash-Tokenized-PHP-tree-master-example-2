@@ -116,7 +116,7 @@
 
 						return json_encode($refresh_token_response);
 					}
-					else if(!empty($refresh_token_response['statusCode']))
+					else if(!empty($refresh_token_response['statusCode']) && $refresh_token_response['statusCode'] != "0000")
 					{
 						return json_encode($refresh_token_response);
 					}
@@ -172,7 +172,7 @@
 			    if(isset($status['agreementStatus']) && $status['agreementStatus'] == "Initiated" && isset($status['bkashURL']) && $status['bkashURL'] != "") {
 					$this->redirect($status['bkashURL']);
 			    } 
-			    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
+			    else if(isset($status['statusCode']) && $status['statusCode'] != "0000") {
 			    	return $status;
 			    }
 			    else {
@@ -216,7 +216,7 @@
 				    if(isset($status['agreementStatus']) && $status['agreementStatus'] != "") {
 						return $status;
 				    } 
-				    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
+				    else if(isset($status['statusCode']) && $status['statusCode'] != "0000") {
 				    	return $status;
 				    }
 				    else {
@@ -230,7 +230,7 @@
 				    if(isset($status['transactionStatus']) && $status['transactionStatus'] != "") {
 						return $status;
 				    } 
-				    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
+				    else if(isset($status['statusCode']) && $status['statusCode'] != "0000") {
 				    	return $status;
 				    }
 				    else {
@@ -312,7 +312,7 @@
 			    	return $cancel_agreement_response;
 			    }
 			    else {
-			    	return ['libMsg' => 'Error in query agreement'];
+			    	return ['libMsg' => 'Error in cancel agreement'];
 			    }
 			}
 			else {
@@ -349,7 +349,7 @@
 		    if(isset($status['transactionStatus']) && $status['transactionStatus'] == "Initiated" && isset($status['bkashURL']) && $status['bkashURL'] != "") {
 				$this->redirect($status['bkashURL']);
 		    } 
-		    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
+		    else if(isset($status['statusCode']) && $status['statusCode'] != "0000") {
 		    	return $status;
 		    }
 		    else {
@@ -387,7 +387,7 @@
 			    if(isset($status['transactionStatus']) && $status['transactionStatus'] != "") {
 					return $status;
 			    } 
-			    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
+			    else if(isset($status['statusCode']) && $status['statusCode'] != "0000") {
 			    	return $status;
 			    }
 			    else {
@@ -401,7 +401,7 @@
 			    if(isset($status['transactionStatus']) && $status['transactionStatus'] != "") {
 					return $status;
 			    } 
-			    else if(isset($status['statusCode']) && $status['statusCode'] != "") {
+			    else if(isset($status['statusCode']) && $status['statusCode'] != "0000") {
 			    	return $status;
 			    }
 			    else {
@@ -499,7 +499,7 @@
 		    if((isset($refund_response['transactionStatus']) && $refund_response['transactionStatus'] != "") && (isset($refund_response['originalTrxID']) && $refund_response['originalTrxID'] != "")) {
 		    	return $refund_response;
 		    }
-		    else if(isset($refund_response['statusCode']) && $refund_response['statusCode'] != "") {
+		    else if(isset($refund_response['statusCode']) && $refund_response['statusCode'] != "0000") {
 		    	return $refund_response;
 		    }
 		    else {
@@ -532,7 +532,7 @@
 	        	$this->writeLog("Sandbox_API_Response_Log", $logData);
 	        }
 
-		    if(isset($refund_query_response['statusCode']) && $refund_query_response['statusCode'] != "") {
+		    if(isset($refund_query_response['statusCode']) && $refund_query_response['statusCode'] != "0000") {
 		    	return $refund_query_response;
 		    }
 		    else {

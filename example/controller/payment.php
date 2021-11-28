@@ -14,7 +14,7 @@
 
                     $bKash = new Tokenized("WO");
                     $post_data = [
-                        'amount' => 0,//$amount,
+                        'amount' => $amount,
                         'merchantInvoiceNumber' => strtoupper(uniqid()),
                         'payerReference' => $wallet
                     ];
