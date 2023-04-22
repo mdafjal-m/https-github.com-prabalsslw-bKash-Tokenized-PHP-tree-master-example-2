@@ -2,8 +2,8 @@
     {
         "statusCode": "0000",
         "statusMessage": "Successful",
-        "originalTrxID": "8KO3056RN7",
-        "refundTrxID": "8KO6056RNA",
+        "originalTrxID": "ADJ0M4W2QE",
+        "refundTrxID": "ADJ0M4W2QE",
         "transactionStatus": "Completed",
         "amount": "20",
         "currency": "BDT",
@@ -13,8 +13,8 @@
     {
         "statusCode": "0000",
         "statusMessage": "Successful",
-        "originalTrxID": "8KO8056RNC",
-        "refundTrxID": "8KO0056RNE",
+        "originalTrxID": "ADJ0M4W2QE",
+        "refundTrxID": "ADJ0M4W2QE",
         "transactionStatus": "Completed",
         "amount": "15",
         "currency": "BDT",
@@ -24,8 +24,8 @@
     {
         "statusCode": "0000",
         "statusMessage": "Successful",
-        "originalTrxID": "8KO1056TKL",
-        "refundTrxID": "8KO5056SY7",
+        "originalTrxID": "ADJ0M4W2QE",
+        "refundTrxID": "ADJ0M4W2QE",
         "transactionStatus": "Completed",
         "amount": "10",
         "currency": "BDT",
@@ -35,8 +35,8 @@
     {
         "statusCode": "0000",
         "statusMessage": "Successful",
-        "originalTrxID": "8KO9056TM7",
-        "refundTrxID": "8KO4056T36",
+        "originalTrxID": "ADJ0M4W2QE",
+        "refundTrxID": "ADJ0M4W2QE",
         "transactionStatus": "Completed",
         "amount": "10",
         "currency": "BDT",
